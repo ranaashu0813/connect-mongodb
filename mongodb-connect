@@ -1,0 +1,18 @@
+//connect our database to node js
+const DB = 'mongodb+srv://Ashurana:Ashurana0813@cluster0.1yl9vny.mongodb.net/mernproject?retryWrites=true&w=majority';
+mongoose.connect(DB,{
+    useNewUrlParser: true,
+
+    useUnifiedTopology: true,
+// useFindAndModify:false
+}).then(()=>  console.log(`connection succesfully`))
+.catch((error) => console.error("MongoDB connection failed:", error.message))
+
+
+//here we are using middle ware 
+
+const middleware = (req,res,next) =>{
+console.log('this is middleware use for changing something in the code');
+next();
+}
+a
